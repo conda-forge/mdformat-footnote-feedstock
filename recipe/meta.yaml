@@ -1,5 +1,5 @@
 {% set name = "mdformat-footnote" %}
-{% set version = "0.1.1" %}
+{% set version = "0.1.2" %}
 
 package:
   name: {{ name|lower }}
@@ -7,12 +7,12 @@ package:
 
 source:
   url: https://pypi.org/packages/source/{{ name[0] }}/{{ name }}/mdformat_footnote-{{ version }}.tar.gz
-  sha256: 3b85c4c84119f15f0b651df89c99a4f6f119fc46dca6b33f7edf4f09655d1126
+  sha256: d8e6a7fece0f902f0c7dfbd009c093182b9b523527ae48f57f57506d79ccb4ec
 
 build:
   noarch: python
   script: {{ PYTHON }} -m pip install . -vv --no-deps --no-build-isolation
-  number: 1
+  number: 0
 
 requirements:
   host:
@@ -21,8 +21,8 @@ requirements:
     - pip
   run:
     - python >={{ python_min }}
-    - mdformat >=0.7.8,<0.8.0
-    - mdit-py-plugins
+    - mdformat >=0.7.0
+    - mdit-py-plugins >=0.4.0
 
 test:
   imports:
